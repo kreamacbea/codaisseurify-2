@@ -1,5 +1,5 @@
-Artist.destroy_all
 Song.destroy_all
+Artist.destroy_all
 
 # ARTISTS
 artist1 = Artist.create!(name: "Odesza", remote_image_url: "https://res.cloudinary.com/db926f0zb/image/upload/v1505057088/odesza_tdppez.jpg")

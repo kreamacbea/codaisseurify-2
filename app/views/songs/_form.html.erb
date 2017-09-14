@@ -1,4 +1,4 @@
-<%= form_for @songs do |f| %>
+<%= form_for [@artist, @artist.@songs.new] do |f| %>
 
   <div class="form-group">
     <label>Song title</label>
@@ -6,11 +6,11 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Save", class: "btn btn-primary" %>
+    <%= f.submit (@song.new_record? ? "Create" : "Update") %>
   </div>
 
   <div class="actions">
-    <%= link_to "Cancel", artist_path, class: "btn btn-default" %>
+    <%= f.submit "Cancel", artist_song_path, class: "btn btn-default" %>
   </div>
 
 <% end %>

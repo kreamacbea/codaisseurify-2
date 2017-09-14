@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :artist do
-    name { Faker::Person.name }
-    image_url { Faker::Image.image_url }
+    name { Faker::Name.unique.person }
+    image { Faker::LoremPixel.unique.image }
   end
 end

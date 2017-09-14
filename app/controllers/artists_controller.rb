@@ -45,10 +45,10 @@ class ArtistsController < ApplicationController
   private
 
   def image_params
-    params[:image].present? ? params.require(:image) : []
+    params[:images].present? ? params.require(:images) : []
   end
 
   def artist_params
-    params.require(:artist).permit(:name, :remote_image_url)
+    params.require(:artist).permit(:name, :image)
   end
 end
