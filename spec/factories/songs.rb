@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :song do
-    title { Faker::Book.unique.title }
+    title       { Faker::Book.title }
+    artist      { build(:artist) }
   end
 end
