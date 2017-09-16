@@ -1,0 +1,16 @@
+<%= form_for [@artist, Song.new] do |f| %>
+
+  <div class="form-group">
+    <label>Song title</label>
+    <%= f.text_area :name, placeholder: "Title of the song", class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit (@song.new_record? ? "Create" : "Update") %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Cancel", artist_song_path, class: "btn btn-default" %>
+  </div>
+
+<% end %>

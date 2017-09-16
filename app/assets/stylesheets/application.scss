@@ -51,6 +51,10 @@ body {
   border-color: #666;
 }
 
+.btn-secondary {
+  color: black;
+}
+
 .outside {
   margin-top: 3.5%;
 }
@@ -76,7 +80,7 @@ body {
   font-weight: 600;
 }
 
-label, .artist-name, .song-list, .warning {
+label, .artist-name, .song-list, .warning, .panel-default {
   color: black;
   text-shadow: none;
 }

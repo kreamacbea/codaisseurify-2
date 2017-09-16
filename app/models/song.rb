@@ -3,5 +3,5 @@ class Song < ApplicationRecord
 
   scope :order_by_name, -> { order(:name) }
 
-  validates :title, presence: true
+  validates :title, presence: true, uniqueness: true
 end

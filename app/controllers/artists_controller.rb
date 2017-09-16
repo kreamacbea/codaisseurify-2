@@ -20,33 +20,27 @@ class ArtistsController < ApplicationController
     @artist = Artist.new(artist_params)
 
     if @artist.save
-      image_params.each do |image|
-        @artist.image.create(image: image)
-      end
-
-      redirect_to edit_artist_path(@artist), notice: "Artist added"
+      redirect_to artists_path, notice: "Artist added"
     else
-      render :new
+      render :new, notice: "Your attempt to add this artist failed. Please try again!"
     end
   end
 
   def update
-    if @artist.update(artist_params)
-    image_params.each do |image|
-      @artist.image.create(image: image)
-    end
+    @artist = Artist.find(params[:id])
+  end
 
-      redirect_to edit_artist_path(@artist), notice: "Artist updated"
+  def destroy
+    @artist = Artist.find(params[:id]).destroy
+
+    if @artist.delete
+      redirect_to artists_path, notice: "Artist deleted"
     else
       render :edit
     end
   end
 
   private
-
-  def image_params
-    params[:images].present? ? params.require(:images) : []
-  end
 
   def artist_params
     params.require(:artist).permit(:name, :image)

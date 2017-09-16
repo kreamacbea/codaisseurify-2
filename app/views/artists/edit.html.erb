@@ -1,9 +1,12 @@
-<div class="panel panel-default">
+<%= form_for @artist, url: { action: "destroy" } do |f| %>
+<div class="panel panel-primary">
   <div class="panel-heading">
-    Edit artist
+    Delete artist:
+    <%= @artist.name %>
   </div>
 
   <div class="panel-body">
-    <%= render 'form' %>
+    <%= f.submit "Delete", class:"btn btn-primary" %>
   </div>
 </div>
+<% end %>
